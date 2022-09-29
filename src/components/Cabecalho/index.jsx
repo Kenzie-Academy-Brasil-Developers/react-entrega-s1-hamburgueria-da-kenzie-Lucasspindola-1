@@ -5,10 +5,10 @@ const Nav = () => {
   return (
     <Cabecalho>
       <figure>
-        <img src="/Rectangle 13 (3).png" alt="logo Hamburgueria Kenzie" />
+        <img src="/Mask Group.svg" alt="logo Hamburgueria Kenzie" />
       </figure>
       <div>
-        <input type="text" />
+        <input type="text" placeholder="Digitar Pesquisa" />
         <button>Pesquisar</button>
       </div>
     </Cabecalho>

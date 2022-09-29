@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProductsList = styled.div`
+export const ProductsList = styled.ul`
   width: 100%;
   display: flex;
   overflow-y: hidden;
@@ -8,7 +8,7 @@ export const ProductsList = styled.div`
   margin: 10px 0 10px 5%;
   /* background-color: green; */
 
-  div {
+  li {
     width: 300px;
     height: 346px;
     display: flex;
@@ -22,6 +22,12 @@ export const ProductsList = styled.div`
       background-color: #f5f5f5;
       display: flex;
       justify-content: center;
+
+      img {
+        max-width: 100%;
+        width: 170px;
+        height: 170px;
+      }
     }
     h2 {
       font-family: Inter;
@@ -66,13 +72,30 @@ export const ProductsList = styled.div`
       margin-left: 5px;
       margin-bottom: 15px;
     }
+  }
 
-    /* Font family: Inter
-Font style: Semi Bold
-Font size: 14px
-Line height: 24px
-Line height: 142%
-Align: Left
-Vertical align: Top */
+  @media only screen and (min-width: 600px) {
+    overflow-y: unset;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      width: 30%;
+      max-width: 300px;
+      img {
+        max-width: 100%;
+        width: 170px;
+        height: 170px;
+      }
+      button {
+        width: 80%;
+      }
+    }
+
+    @media only screen and (min-width: 780px) {
+      li button {
+        width: 106px;
+      }
+    }
   }
 `;

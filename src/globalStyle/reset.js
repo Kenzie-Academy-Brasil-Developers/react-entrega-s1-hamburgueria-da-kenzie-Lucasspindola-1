@@ -8,6 +8,7 @@ const ResetCss = createGlobalStyle`
     --Color-font-btn: rgba(255, 255, 255, 1);
     --Color-font-title-products:rgba(51, 51, 51, 1);
     --Color-font-type-products: #828282;
+    --Color-background_procuducts-car:#E0E0E0;
 
     /* --Color-primary-Focus: #FF427F;
     --Color-primary-Negative: #59323F;
@@ -21,7 +22,9 @@ const ResetCss = createGlobalStyle`
     --Negative: #E83F5B;
     --fontInter: url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;700&family=Inter:wght@100;200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;1,500&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
     font-size: 60%;   */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;500;600;700&display=swap');
   }
+  
   @media (min-width: 700px) {
     :root {
       /* font-size: 62.5%; */

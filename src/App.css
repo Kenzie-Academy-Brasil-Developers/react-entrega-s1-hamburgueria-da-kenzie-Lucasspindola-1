@@ -10,6 +10,13 @@ body {
   display: flex;
 }
 
+@media only screen and (min-width: 600px) {
+  main {
+    display: flex;
+    width: 100%;
+  }
+}
+
 /* @media (prefers-reduced-motion: no-preference) {
   
 } */
