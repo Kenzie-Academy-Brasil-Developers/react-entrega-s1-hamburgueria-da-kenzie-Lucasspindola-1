@@ -15,7 +15,7 @@ export const Cabecalho = styled.div`
     }
   }
 
-  div {
+  form {
     display: flex;
     align-items: center;
     background-color: var(--Color-background-input);
@@ -49,7 +49,7 @@ export const Cabecalho = styled.div`
     justify-content: space-between;
     height: 80px;
   }
-  div {
+  form {
     width: 365px;
     margin-right: 5%;
   }

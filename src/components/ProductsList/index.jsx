@@ -1,11 +1,20 @@
 import { ProductsList } from "./style";
-const ProductsListContainer = ({ products }) => {
+import { toast } from "react-toastify";
+const ProductsListContainer = ({
+  products,
+  productsAdd,
+  setProductsAdd,
+  filtredProduct,
+  valueInput,
+}) => {
+  const notify = (mensager) => toast.success(mensager);
+  console.log(productsAdd);
   return (
     <ProductsList>
       {products &&
         products.map((element, index) => {
           return (
-            <li key={index}>
+            <li key={index} id={element.id}>
               <figure>
                 <img
                   src={element.img}
@@ -15,7 +24,23 @@ const ProductsListContainer = ({ products }) => {
               <h2>{element.name}</h2>
               <span>{element.category}</span>
               <p>R${element.price}</p>
-              <button>Adicionar</button>
+              <button
+                onClick={() => {
+                  if (productsAdd === []) {
+                    setProductsAdd((previous) => [...previous, element]);
+                    notify("Produto Adicionado!");
+                  } else {
+                    if (productsAdd.find((item) => item.id === element.id)) {
+                      notify("Produto existente!");
+                    } else {
+                      setProductsAdd((previous) => [...previous, element]);
+                      notify("Produto Adicionado!");
+                    }
+                  }
+                }}
+              >
+                Adicionar
+              </button>
             </li>
           );
         })}
