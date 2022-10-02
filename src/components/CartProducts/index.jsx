@@ -12,7 +12,7 @@ const CartProducts = ({
   let value = productsAdd.reduce((currentValue, atualValue) => {
     return currentValue + atualValue.price;
   }, 0);
-  console.log(value);
+
   setTotalValue(value);
   if (productsAdd.length === 0) {
     return (
@@ -45,7 +45,9 @@ const CartProducts = ({
         <section className="containerTotalPrice">
           <div className="informationsPriceSome">
             <span className="total">Total</span>
-            <span className="value">{totalValue}</span>
+            <span className="value">{`R$${totalValue
+              .toFixed(2)
+              .replace(".", ",")}`}</span>
           </div>
           <button
             className="btnRemoveProduct"

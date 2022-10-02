@@ -37,20 +37,23 @@ function App() {
         />
       </header>
       <main>
-        <ProductsList
-          productsAdd={productsAdd}
-          setProductsAdd={setProductsAdd}
-          products={products}
-          filtredProduct={filtredProduct}
-          valueInput={valueInput}
-        />
+        <div className="containerComponentsProducts">
+          <ProductsList
+            productsAdd={productsAdd}
+            setProductsAdd={setProductsAdd}
+            products={products}
+            filtredProduct={filtredProduct}
+            setFiltredProduct={setFiltredProduct}
+            valueInput={valueInput}
+          />
 
-        <CartProducts
-          productsAdd={productsAdd}
-          setProductsAdd={setProductsAdd}
-          totalValue={totalValue}
-          setTotalValue={setTotalValue}
-        />
+          <CartProducts
+            productsAdd={productsAdd}
+            setProductsAdd={setProductsAdd}
+            totalValue={totalValue}
+            setTotalValue={setTotalValue}
+          />
+        </div>
       </main>
       <ToastContainer
         position="bottom-right"

@@ -1,20 +1,16 @@
 import { Cabecalho } from "./style";
 
-// const search = () => {
-//   const productSearch = () => {
-//     products.filter((element) => {
-//       searchValue.toLowerCase();
-//       element.name.toLowerCase() === searchValue;
-
-//       // setProducts()
-//     });
-//   };
-// };
-
-const Nav = ({ products, setProducts, valueInput, setValueInput }) => {
+const Nav = ({
+  products,
+  setProducts,
+  valueInput,
+  setValueInput,
+  setFiltredProduct,
+}) => {
   const search = (event) => {
     event.preventDefault();
-    setValueInput("");
+    setFiltredProduct([]);
+
     const filtredItems = products.filter(
       (element) =>
         element.name.toLowerCase() ===
@@ -28,7 +24,7 @@ const Nav = ({ products, setProducts, valueInput, setValueInput }) => {
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
     );
-    setProducts(filtredItems);
+    setFiltredProduct(filtredItems);
   };
   return (
     <Cabecalho>
@@ -38,6 +34,8 @@ const Nav = ({ products, setProducts, valueInput, setValueInput }) => {
 
       <form onSubmit={search}>
         <input
+          data-ls-module="charCounter"
+          maxlength="10"
           type="text"
           placeholder="Digitar Pesquisa"
           onChange={(event) => setValueInput(event.target.value)}
@@ -48,5 +46,3 @@ const Nav = ({ products, setProducts, valueInput, setValueInput }) => {
   );
 };
 export default Nav;
-
-// onChange={(event) => setNewDescription(event.target.value)}

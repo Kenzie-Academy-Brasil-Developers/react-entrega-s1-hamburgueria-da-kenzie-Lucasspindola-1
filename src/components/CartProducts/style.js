@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const Cart = styled.section`
+  width: 90%;
   max-width: 384px;
   background-color: var(--Color-primary-header);
   display: flex;
   flex-direction: column;
-  margin: 0 5% 0 5%;
+  margin: 0 auto;
   .carTitle {
     width: 100%;
+    min-height: 65px;
     height: 65px;
     background-color: var(--Color-primary);
     border-top-left-radius: 5px;
@@ -26,7 +28,9 @@ export const Cart = styled.section`
     flex-direction: column;
     align-items: center;
     min-height: 158px;
+    height: 158px;
     justify-content: center;
+
     h5 {
       font-family: Inter;
       font-style: Bold;
@@ -45,6 +49,8 @@ export const Cart = styled.section`
   }
   /* Quando estiver com produtos no carrinho */
   .containerCarProductsFull {
+    /* height: 400px; */
+    overflow-y: scroll;
   }
   .containerCarProductsFull li {
     display: flex;
@@ -136,7 +142,7 @@ export const Cart = styled.section`
   @media only screen and (min-width: 600px) {
     min-width: 289px;
     min-height: 370px;
-
+    height: 470px;
     margin: 10px 5% 0 0%;
   }
 `;

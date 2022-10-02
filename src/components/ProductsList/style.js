@@ -75,9 +75,44 @@ export const ProductsList = styled.ul`
   }
 
   @media only screen and (min-width: 600px) {
-    overflow-y: unset;
     display: flex;
     flex-wrap: wrap;
+
+    .searchResults {
+      display: flex;
+
+      width: 100%;
+      margin: 0px 5% 10px 0;
+      align-items: center;
+      justify-content: space-between;
+      font-family: inter;
+      font-style: bold;
+      font-size: 24px;
+      line-height: 34px;
+      font-weight: 700;
+    }
+
+    .clearSearch {
+      width: 170px;
+      height: 40px;
+      background-color: var(--Color-primary);
+      border: none;
+      border-radius: 8px;
+      font-family: inter;
+      font-style: bold;
+      font-size: 18px;
+      line-height: 24px;
+      color: #ffffff;
+    }
+    .searchResultsDivision {
+      display: flex;
+    }
+    .searchResultsDivision h5 {
+      color: #828282;
+      font-size: 22px;
+      line-height: 34px;
+      font-weight: 700;
+    }
 
     li {
       width: 30%;
