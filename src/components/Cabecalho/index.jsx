@@ -17,32 +17,24 @@ const Nav = ({
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .includes(valueInput.toLowerCase());
+      return value;
+    });
 
+    const filtredItemsCategory = products.filter((element) => {
       const valueType = element.category
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .includes(valueInput.toLowerCase());
-      if (value === true) {
-        return value;
-      }
-      if (valueType === true) {
-        return valueType;
-      }
+      return valueType;
     });
 
-    // element.name.toLowerCase() ===
-    //   valueInput
-    //     .toLocaleLowerCase()
-    //     .normalize("NFD")
-    //     .replace(/[\u0300-\u036f]/g, "") ||
-    // element.category.toLowerCase() ===
-    //   valueInput
-    //     .toLocaleLowerCase()
-    //     .normalize("NFD")
-    //     .replace(/[\u0300-\u036f]/g, "")
-    setFiltredProduct(filtredItems);
-    console.log(filtredItems);
+    if (filtredItems.length > 0) {
+      setFiltredProduct(filtredItems);
+    }
+    if (filtredItemsCategory.length > 0) {
+      setFiltredProduct(filtredItemsCategory);
+    }
   };
 
   return (
