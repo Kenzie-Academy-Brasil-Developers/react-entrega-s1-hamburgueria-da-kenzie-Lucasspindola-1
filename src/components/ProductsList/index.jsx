@@ -63,7 +63,7 @@ const ProductsListContainer = ({
               setFiltredProduct([]);
               setValueInput([]);
             }}
-            className="clearSearch"
+            className="clearSearch NobtnMobile"
           >
             Limpar busca
           </button>

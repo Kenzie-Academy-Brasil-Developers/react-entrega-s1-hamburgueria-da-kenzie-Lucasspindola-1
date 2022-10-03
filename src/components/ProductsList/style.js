@@ -7,6 +7,12 @@ export const ProductsList = styled.ul`
   gap: 10px;
   margin: 10px 0 10px 5%;
   /* background-color: green; */
+  .searchResults {
+    display: none;
+  }
+  .NobtnMobile {
+    display: none;
+  }
 
   li {
     width: 300px;
@@ -78,6 +84,12 @@ export const ProductsList = styled.ul`
     display: flex;
     flex-wrap: wrap;
 
+    .NobtnMobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .searchResults {
       display: flex;
 
@@ -109,13 +121,17 @@ export const ProductsList = styled.ul`
     }
     .searchResultsDivision h5 {
       color: #828282;
-      font-size: 22px;
+      font-size: 20px;
       line-height: 34px;
       font-weight: 700;
     }
 
+    .searchResultsDivision span {
+      font-size: 22px;
+    }
+
     li {
-      width: 30%;
+      width: 40%;
       max-width: 300px;
       img {
         max-width: 100%;
@@ -130,6 +146,15 @@ export const ProductsList = styled.ul`
     @media only screen and (min-width: 780px) {
       li button {
         width: 106px;
+      }
+      li {
+        width: 30%;
+        max-width: 300px;
+        img {
+          max-width: 100%;
+          width: 170px;
+          height: 170px;
+        }
       }
     }
   }

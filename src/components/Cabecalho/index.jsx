@@ -11,21 +11,40 @@ const Nav = ({
     event.preventDefault();
     setFiltredProduct([]);
 
-    const filtredItems = products.filter(
-      (element) =>
-        element.name.toLowerCase() ===
-          valueInput
-            .toLocaleLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "") ||
-        element.category.toLowerCase() ===
-          valueInput
-            .toLocaleLowerCase()
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-    );
+    const filtredItems = products.filter((element) => {
+      const value = element.name
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .includes(valueInput.toLowerCase());
+
+      const valueType = element.category
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .includes(valueInput.toLowerCase());
+      if (value === true) {
+        return value;
+      }
+      if (valueType === true) {
+        return valueType;
+      }
+    });
+
+    // element.name.toLowerCase() ===
+    //   valueInput
+    //     .toLocaleLowerCase()
+    //     .normalize("NFD")
+    //     .replace(/[\u0300-\u036f]/g, "") ||
+    // element.category.toLowerCase() ===
+    //   valueInput
+    //     .toLocaleLowerCase()
+    //     .normalize("NFD")
+    //     .replace(/[\u0300-\u036f]/g, "")
     setFiltredProduct(filtredItems);
+    console.log(filtredItems);
   };
+
   return (
     <Cabecalho>
       <figure>

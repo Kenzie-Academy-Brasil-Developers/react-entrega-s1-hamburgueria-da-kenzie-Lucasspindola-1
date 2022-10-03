@@ -140,7 +140,7 @@ export const Cart = styled.section`
   }
 
   @media only screen and (min-width: 600px) {
-    min-width: 289px;
+    min-width: 200px;
     min-height: 370px;
     height: 470px;
     margin: 10px 5% 0 0%;

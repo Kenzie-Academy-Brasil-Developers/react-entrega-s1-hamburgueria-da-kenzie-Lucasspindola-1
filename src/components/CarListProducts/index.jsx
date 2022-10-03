@@ -8,7 +8,6 @@ const CarListProducts = ({ element, productsAdd, setProductsAdd }) => {
         <div className="containerInformationsProductCar">
           <h5>{element.name}</h5>
           <span>{element.category}</span>
-          {/* <span>0</span> */}
         </div>
       </div>
       <button
